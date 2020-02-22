@@ -92,3 +92,4 @@ fabric.properties
 .idea/
 venv/
 # End of https://www.gitignore.io/api/pycharm
+espncricinfo_scraper/spiders/__pycache__/
