@@ -89,5 +89,6 @@ fabric.properties
 # Markdown Navigator plugin
 .idea/**/markdown-navigator.xml
 .idea/**/markdown-navigator/
-
+.idea/
+venv/
 # End of https://www.gitignore.io/api/pycharm
