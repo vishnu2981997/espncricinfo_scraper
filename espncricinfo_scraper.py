@@ -6,6 +6,8 @@ from espncricinfo_scraper.spiders.player_details import PlayerDetailsSpider
 import os
 from collections import OrderedDict
 
+import csv
+
 
 def delete_file(file):
     try:
@@ -54,7 +56,15 @@ def main():
     for item in sorted_data:
         top_fifteen.append({"name": item, "country": sorted_data[item]["country"], "score": sorted_data[item]["score"]})
 
-    print(top_fifteen[:15])
+    top_fifteen = top_fifteen[:15]
+
+    with open('player_details.csv', mode='w') as csv_file:
+        fieldnames = ['name', 'country', 'score']
+        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+
+        writer.writeheader()
+        for data in top_fifteen:
+            writer.writerow(data)
 
 
 if __name__ == "__main__":
