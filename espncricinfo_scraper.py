@@ -1,12 +1,11 @@
+import csv
 import json
+import os
+from collections import OrderedDict
 
 from scrapy.crawler import CrawlerProcess
 
 from espncricinfo_scraper.spiders.player_details import PlayerDetailsSpider
-import os
-from collections import OrderedDict
-
-import csv
 
 
 def delete_file(file):

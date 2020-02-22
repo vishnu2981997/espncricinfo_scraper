@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
-import scrapy
 import urllib.parse as urlparse
 from urllib.parse import parse_qs
+
+import scrapy
 
 
 class PlayerDetailsSpider(scrapy.Spider):
