@@ -63,7 +63,7 @@ def main():
     start_year = 1972
     end_year = 2020
 
-    top_fifteen = []
+    formatted_data = []
     for item in sorted_data:
         player_data = {
             "name": item,
@@ -76,9 +76,7 @@ def main():
         for year in range(start_year, end_year + 1):
             player_data[str(year)] = scores[year] if scores.get(year, None) else "-"
 
-        top_fifteen.append(player_data)
-
-    top_fifteen = top_fifteen[:15]
+        formatted_data.append(player_data)
 
     with open('player_details.csv', mode='w') as csv_file:
         fieldnames = ['name', 'country']
@@ -87,7 +85,7 @@ def main():
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
 
         writer.writeheader()
-        for data in top_fifteen:
+        for data in formatted_data:
             writer.writerow(data)
 
 
